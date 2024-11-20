@@ -7,3 +7,7 @@ export default class Id {
     return Math.random().toString(36).substring(2, 15);
   }
 }
+
+for (let i = 0; i < 100; i++) {
+  console.log(Id.novo());
+}
