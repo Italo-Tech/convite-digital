@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-const urlBase = process.env.EXPO_PUBLIC_API_URL;
+const urlBase = process.env.NEXT_PUBLIC_API_URL;
 
 export default function useAPI() {
   const httpGet = useCallback(async function (caminho: string) {

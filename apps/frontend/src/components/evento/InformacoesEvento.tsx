@@ -3,6 +3,7 @@ import Informacao from "../shared/Informacao";
 
 export interface InformacoesEventoProps {
   evento: Evento;
+  esconderNome?: boolean;
   className?: string;
 }
 
@@ -10,10 +11,12 @@ export default function InformacoesEvento(props: InformacoesEventoProps) {
   const { evento } = props;
   return (
     <div className={`flex flex-col gap-2 ${props.className ?? ""}`}>
-      <div className="flex-1 flex items-center gap-4 border border-zinc-800 px-6 py-3 rounded-lg">
-        <span className="text-2xl font-black">{evento.alias}: </span>
-        <span className="text-xl text-zinc-300">{evento.nome}</span>
-      </div>
+      {props.esconderNome ? null : (
+        <div className="flex-1 flex items-center gap-4 border border-zinc-800 px-6 py-3 rounded-lg">
+          <span className="text-2xl font-black">{evento.alias}: </span>
+          <span className="text-xl text-zinc-300">{evento.nome}</span>
+        </div>
+      )}
       <div className="flex gap-2">
         <Informacao label="Data:">
           <span>
